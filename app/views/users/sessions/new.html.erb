@@ -1,0 +1,41 @@
+<div class="text-center m-3">
+  <h2>Log in</h2>
+</div>
+
+<div class="container w-50">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+    <div class="row py-3">
+      <div class="col-6 col-sm-3">
+        <%= form.label :email, class: "form-label" %>
+      </div>
+      <div class="col-6">
+        <%= form.email_field :email, required: true, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="row py-3">
+      <div class="col-6 col-sm-3">
+        <%= form.label :password, class: "form-label" %>
+      </div>
+      <div class="col-6">
+        <%= form.password_field :password, required: true, class: "form-control" %>
+      </div>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= form.check_box :remember_me %>
+        <%= form.label :remember_me %>
+      </div>
+    <% end %>
+
+    <div class="text-center">
+      <%= form.submit "Sign In", class: "btn btn-success" %>
+    </div>
+  
+    <div class="text-center my-2">
+      <%= render "users/shared/links" %>
+    </div>
+  <% end %>
+
+</div>
