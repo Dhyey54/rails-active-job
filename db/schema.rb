@@ -35,10 +35,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_10_065736) do
   end
 
   create_table "events_users", id: false, force: :cascade do |t|
-    t.bigint "events_id"
-    t.bigint "users_id"
-    t.index ["events_id"], name: "index_events_users_on_events_id"
-    t.index ["users_id"], name: "index_events_users_on_users_id"
+    t.bigint "event_id"
+    t.bigint "user_id"
+    t.index ["event_id"], name: "index_events_users_on_event_id"
+    t.index ["user_id"], name: "index_events_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

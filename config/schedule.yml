@@ -1,0 +1,9 @@
+generate_random_events:
+  cron: "0 * * * *"
+  class: "EventGenerationJob"
+  queue: default
+
+sending_events_list:
+  cron: "6 18 * * * Asia/Kolkata"
+  class: "EventsListJob"
+  queue: default

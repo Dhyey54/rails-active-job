@@ -1,11 +1,13 @@
-<h1 class="text-center my-4">Events</h1>
+<p class="m-2">Greetings</p>
+
+<h3 class="text-center">Events List</h3>
+
 <table class="table w-50 table-bordered table-striped table-hover m-auto text-center">
   <tr>
     <th>Index</th>
     <th>Name</th>
     <th>Description</th>
     <th>Date</th>
-    <th>Action</th>
   </tr>
   <% @events.each_with_index do |event, idx| %>
     <tr>
@@ -13,8 +15,6 @@
       <td><%= event.title %></td>
       <td><%= event.description %></td>
       <td><%= event.event_date %></td>
-      <td><%= link_to 'Show', event_path(event), class: "text-decoration-none text-light btn btn-info me-2" %>
-      <%= link_to "Destroy", event_path(event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-decoration-none text-light btn btn-danger" %></td>
     </tr>
   <% end %>
 </table>

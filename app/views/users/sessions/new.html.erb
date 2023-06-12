@@ -6,10 +6,10 @@
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
     <div class="row py-3">
       <div class="col-6 col-sm-3">
-        <%= form.label :email, class: "form-label" %>
+        <%= form.label :username, class: "form-label" %>
       </div>
       <div class="col-6">
-        <%= form.email_field :email, required: true, class: "form-control" %>
+        <%= form.text_field :username, required: true, class: "form-control" %>
       </div>
     </div>
 
