@@ -1,5 +1,5 @@
 <h1 class="text-center my-4">Events</h1>
-<table class="table w-50 table-bordered table-striped table-hover m-auto text-center">
+<table class="table w-75 table-bordered table-striped table-hover m-auto text-center">
   <tr>
     <th>Index</th>
     <th>Name</th>
@@ -12,8 +12,14 @@
       <td><%= idx+1 %></td>
       <td><%= event.title %></td>
       <td><%= event.description %></td>
-      <td><%= event.event_date %></td>
-      <td><%= link_to 'Show', event_path(event), class: "text-decoration-none text-light btn btn-info me-2" %>
+      <td><%= event.eventdate %></td>
+      <td>
+        <% unless event.users.include?(current_user) %>
+          <%= link_to 'Enroll', enroll_event_path(event), class: "text-decoration-none text-light btn btn-info me-2" %>
+        <% else %>
+          <%= link_to "Discard", discard_event_path(event), data: { turbo_method: :delete }, class: "text-decoration-none text-light btn btn-danger" %>
+        <% end %>
+      <%= link_to 'Show', event_path(event), class: "text-decoration-none text-light btn btn-info me-2" %>
       <%= link_to "Destroy", event_path(event), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-decoration-none text-light btn btn-danger" %></td>
     </tr>
   <% end %>

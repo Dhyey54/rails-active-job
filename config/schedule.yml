@@ -1,9 +1,14 @@
 generate_random_events:
-  cron: "0 * * * *"
+  cron: "57 * * * *"
   class: "EventGenerationJob"
   queue: default
 
 sending_events_list:
   cron: "6 18 * * * Asia/Kolkata"
   class: "EventsListJob"
+  queue: default
+
+sending_event_reminder:
+  cron: "0 * * * *"
+  class: "EventReminderJob"
   queue: default
