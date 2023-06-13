@@ -30,9 +30,21 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
+# Use Sidekiq for Simple, efficient background processing for Ruby.
 gem "sidekiq"
 
+# Use bootstrap for using bootstrap in our project.
 gem 'bootstrap', '~> 5.3.0.alpha3'
+
+# Use Devise for user authentication and authorization
+gem "devise", "~> 4.9"
+
+# Use Sidekiq cron to schedule jobs at specified times
+gem "sidekiq-cron", "~> 1.10"
+
+# Use faker to generate Fake data for deveoplment.
+gem "faker", "~> 3.2"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -74,8 +86,3 @@ group :test do
   gem "webdrivers"
 end
 
-gem "devise", "~> 4.9"
-
-gem "sidekiq-cron", "~> 1.10"
-
-gem "faker", "~> 3.2"
