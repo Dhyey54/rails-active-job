@@ -6,6 +6,9 @@ ruby "3.1.3"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 
+# use to load environment variables from .env into ENV in development
+gem 'dotenv-rails', groups: [:development, :test]
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -85,4 +88,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
