@@ -1,0 +1,20 @@
+<p class="m-2">Greetings</p>
+
+<h3 class="text-center">Events List</h3>
+
+<table class="table w-50 table-bordered table-striped table-hover m-auto text-center">
+  <tr>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Date</th>
+  </tr>
+  <% @events.each_with_index do |event, idx| %>
+    <tr>
+      <td><%= idx+1 %></td>
+      <td><%= event.title %></td>
+      <td><%= event.description %></td>
+      <td><%= event.eventdate %></td>
+    </tr>
+  <% end %>
+</table>

@@ -6,11 +6,14 @@ ruby "3.1.3"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 
+# use to load environment variables from .env into ENV in development
+gem 'dotenv-rails', groups: [:development, :test]
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+# Use PostgreSQL as the database for Active Record
+gem "pg"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -30,7 +33,21 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
+# Use Sidekiq for Simple, efficient background processing for Ruby.
+gem "sidekiq"
+
+# Use bootstrap for using bootstrap in our project.
 gem 'bootstrap', '~> 5.3.0.alpha3'
+
+# Use Devise for user authentication and authorization
+gem "devise", "~> 4.9"
+
+# Use Sidekiq cron to schedule jobs at specified times
+gem "sidekiq-cron", "~> 1.10"
+
+# Use faker to generate Fake data for deveoplment.
+gem "faker", "~> 3.2"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
